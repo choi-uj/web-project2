@@ -1,0 +1,21 @@
+/* main.css */
+@charset "utf-8";
+:root {
+    font-size: 10px;
+    --cream: #FFF1DB;
+    --lightgreen: #CAD790;
+    --green: #628255;
+    --deepgreen: rgb(31, 51, 0);
+    
+}
+html, body {
+    font-family: 'Wanted Sans', 'Pretendard', '맑은 고딕', sans-serif, 'Noto Serif KR';
+    color: #333;
+    font-size: 1.6rem;
+    margin: 0;padding: 0;
+    overflow-x: hidden;
+}
+
+.container {padding: 10rem 20rem;}
+
+

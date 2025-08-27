@@ -5,7 +5,7 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
-* {
+*, body {
     margin: 0;padding: 0;
     font: inherit;color: inherit;
     line-height: 1;
@@ -28,4 +28,13 @@ input, select, textarea {
 }
 table {
     border-collapse: collapse;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
+    color: inherit;
 }

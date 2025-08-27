@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/reset.css";
+import "./css/main.css";
 import "./css/font.css";
 import Header from "./Header";
 import MainVisual from "./MainVisual";
