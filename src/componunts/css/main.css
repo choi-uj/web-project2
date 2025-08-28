@@ -5,7 +5,7 @@
     --cream: #FFF1DB;
     --lightgreen: #CAD790;
     --green: #628255;
-    --deepgreen: rgb(31, 51, 0);
+    --deepgreen: #1f3300;
     
 }
 html, body {
@@ -17,5 +17,6 @@ html, body {
 }
 
 .container {padding: 10rem 20rem;}
+
 
 

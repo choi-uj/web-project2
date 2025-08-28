@@ -12,11 +12,12 @@ import Product from "./Product";
 import Footer from "./Footer";
 
 
+
 function WebHome() {
     return(
         <>
-            <Header></Header>
-            <h2>Hello</h2>
+            <Header/>
+            <MainVisual/>
         </>
     );
 }
