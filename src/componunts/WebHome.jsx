@@ -10,12 +10,14 @@ import Contact from "./Contact";
 import News from "./News";
 import Product from "./Product";
 import Footer from "./Footer";
+import Side from "./Side";
 
 
 
 function WebHome() {
     return(
         <>
+            <Side/>
             <Header/>
             <MainVisual/>
         </>
