@@ -20,6 +20,7 @@ function WebHome() {
             <Side/>
             <Header/>
             <MainVisual/>
+            <About/>
         </>
     );
 }
