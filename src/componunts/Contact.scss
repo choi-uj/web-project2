@@ -1,0 +1,35 @@
+// Contact.scss
+.contact {
+    display: flex;flex-direction: row;
+    justify-content: space-between;align-items: start;
+    background: var(--cream);
+}
+.cont-txt {
+    display: flex;flex-direction: column;
+    gap: 10rem;padding: 10rem 0 0 10rem;
+
+    .process {
+        display: flex;flex-direction: column;
+        gap: 8rem;
+
+        .round-btn {
+            background: var(--lightgreen);
+            color: var(--deepgreen);
+        }
+        .round-btn::after {
+            border: solid 1px var(--lightgreen);
+        }
+        li {
+            list-style: disc;color: var(--green);
+            font-size: 2.4rem;line-height: 4rem;
+        }
+    }
+    
+
+}
+
+.cont-img {
+    display: flex;
+    width: 50vw;height: 100vh;
+    background: url(/img/build01.jpg) center / cover;
+}

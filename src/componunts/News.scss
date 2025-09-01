@@ -1,0 +1,29 @@
+// News.scss
+.news {background: var(--deepgreen);}
+.news .container {
+    display: flex;flex-direction: column;
+    justify-content: center;align-items: center;
+    position: relative;gap: 10rem;
+
+    h2 {color: var(--cream);}
+    >.round-btn {
+        position: absolute;
+        top: 10rem;right: 15rem;
+        background: var(--lightgreen);
+        color: var(--deepgreen);
+
+        &::after {
+            border: 1px solid var(--lightgreen);
+        }
+    }
+    .news-li {
+        display: flex;gap: 5rem;
+
+        > li {
+            display: flex;flex-direction: column;
+            padding: 3rem;gap: 3rem;
+            background: var(--cream);
+        }
+    }
+}
+
