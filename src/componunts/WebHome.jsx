@@ -21,6 +21,7 @@ function WebHome() {
             <Header/>
             <MainVisual/>
             <About/>
+            <Project/>
         </>
     );
 }

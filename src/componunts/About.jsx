@@ -21,12 +21,18 @@ function About() {
                     </div>
                 </div>
                 {/* <div className="about-a">
-                    <div className="about-round">Green<br />Space</div>
+                    <div className="about-round">Green<br />Space
+                        <span>도시환경에 적합한<br />정원설계 및 시공</span>
+                    </div>
                     <div className="a-center">
-                        <div className="about-round">Green<br />Lifestyle</div>
+                        <div className="about-round">Green<br />Lifestyle
+                            <span>정원에 기반한<br />경험-콘텐츠 개발</span>
+                        </div>
                         <h3>SEOUL<br />GARDENING<br />CLUB</h3>
                     </div>
-                    <div className="about-round">Green<br />Research</div>
+                    <div className="about-round">Green<br />Research
+                        <span>정원을 통한<br />공간 솔루션 연구</span>
+                    </div>
                 </div> */}
                 <div className="about-b">
                     <div className="about-round">
