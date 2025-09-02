@@ -1,0 +1,45 @@
+// Product.scss
+.product {
+    background: var(--cream);
+
+    .container {
+        display: flex;flex-direction: row;
+        gap: 5rem;
+    }
+}
+.omg-int {
+    display: flex;flex-direction: column;
+    gap: 6rem;
+}
+.omg-txt {
+    display: flex;flex-direction: column;
+    gap: 3rem;
+
+    > h2 {
+        color: var(--deepgreen);
+    }
+    > p {
+        font-size: 2.4rem;
+        color: var(--green);
+    }
+}
+.omg-btn {
+    display: flex;
+    gap: 10rem;
+
+    .round-btn {
+        background: var(--deepgreen);
+        color: var(--cream);
+
+        &::after {
+            border: 1px solid var(--deepgreen);
+        }
+        &:hover {
+            background: var(--lightgreen);
+            color: var(--deepgreen);
+        }
+        &:hover::after {
+            border: 1px solid var(--green);
+        }
+    }
+}
