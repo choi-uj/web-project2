@@ -24,6 +24,7 @@ function WebHome() {
             <Project/>
             <Contact/>
             <News/>
+            <Footer/>
         </>
     );
 }

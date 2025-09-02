@@ -1,0 +1,48 @@
+// Footer.scss
+#footer {
+    background: var(--deepgreen);
+}
+.container {
+    display: flex;gap: 10rem;
+}
+.footer-logo img {
+    height: 30vh;
+}
+.footer-txt {
+    width: 100%;
+    display: flex;flex-direction: column;
+    justify-content: space-between;gap: 5rem;
+    color: var(--cream);
+}
+address {
+    display: flex;flex-direction: column;
+    align-items: start;
+    line-height: 5rem;
+    font-size: 2.5rem;
+
+    .footer-contact {
+        line-height: 3rem;
+        font-size: 1.8rem;
+        color: var(--lightgreen);
+        
+        span {
+            font-weight: 500;
+            color: var(--cream);
+        }
+    }
+}
+.footer-under {
+    display: flex;flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+
+    .footer-menu {
+        display: flex;
+        justify-content: end;align-items: center;
+        gap: 5rem;
+    }
+    .copyright {
+        text-align: right;font-size: 1.6rem;
+        color: var(--lightgreen);
+    }
+}
