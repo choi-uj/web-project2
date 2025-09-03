@@ -7,6 +7,7 @@ import img3 from "/img/rt-01.jpg";
 import img4 from "/img/rt-11.jpg";
 import img5 from "/img/rt-04.jpg";
 import img6 from "/img/rt-02.jpg";
+import CircularBtn from './CircularBtn';
 
 function Product() {
     const images = [
@@ -31,8 +32,8 @@ function Product() {
                         </p>
                     </div>
                     <div className="omg-btn">
-                        <a href="#" className="round-btn">렌탈 상담</a>
-                        <a href="#" className="round-btn">사이즈별 금액</a>
+                        <CircularBtn as="a" href="#product" text="렌탈 상담"/>
+                        <CircularBtn as="a" href="#product" text="사이즈별 금액"/>
                     </div>
                 </div>
                 <div className="omg-img">

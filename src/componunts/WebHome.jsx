@@ -11,6 +11,8 @@ import News from "./News";
 import Product from "./Product";
 import Footer from "./Footer";
 import Side from "./Side";
+import CircularBtn from './CircularBtn';
+
 
 
 

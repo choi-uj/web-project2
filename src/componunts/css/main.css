@@ -24,17 +24,4 @@ h2 {
 p {
     font-size: 3rem;
 }
-.round-btn {
-    position: relative;
-    display: flex;
-    justify-content: center;align-items: center;
-    width: 13rem;height: 13rem;
-    border-radius: 50%;
-    font-size: 1.8rem;line-height: 2.2rem;
-    font-weight: 400;text-align: center;
-}
-.round-btn::after {
-    content: '';position: absolute;
-    width: 18rem;height: 18rem;
-    border-radius: 50%;
-}
+

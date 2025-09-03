@@ -26,21 +26,22 @@
 }
 .omg-btn {
     display: flex;
-    gap: 10rem;
+    gap: 10rem;padding-left: 2rem;
 
     .round-btn {
         background: var(--deepgreen);
         color: var(--cream);
 
-        &::after {
-            border: 1px solid var(--deepgreen);
+        .circular-text text {
+            fill: var(--deepgreen); // 원하는 색상으로 변경
         }
         &:hover {
             background: var(--lightgreen);
             color: var(--deepgreen);
-        }
-        &:hover::after {
-            border: 1px solid var(--green);
+
+            .circular-text text {
+                fill: var(--lightgreen);
+            }
         }
     }
 }
