@@ -1,8 +1,23 @@
 // Product
 import React from "react";
 import "./Product.scss";
+import img1 from "/img/rt-05.jpg";
+import img2 from "/img/rt-06.jpg";
+import img3 from "/img/rt-01.jpg";
+import img4 from "/img/rt-11.jpg";
+import img5 from "/img/rt-04.jpg";
+import img6 from "/img/rt-02.jpg";
 
 function Product() {
+    const images = [
+        { src: img1, row: 3, col: 2 },
+        { src: img2, row: 2, col: 2 },
+        { src: img3, row: 3, col: 2 },
+        { src: img4, row: 2, col: 2 },
+        { src: img5, row: 2, col: 1 },
+        { src: img6, row: 2, col: 3 }
+    ];
+
     return(
         <section className="product">
             <div className="container">
@@ -20,7 +35,20 @@ function Product() {
                         <a href="#" className="round-btn">사이즈별 금액</a>
                     </div>
                 </div>
-                <div className="omg-img"></div>
+                <div className="omg-img">
+                    {images.map((img, index) => (
+                        <div
+                            className="grid-item"
+                            key={index}
+                            style={{
+                                gridRowEnd: `span ${img.row}`,
+                                gridColumnEnd: `span ${img.col}`,
+                            }}
+                        >
+                            <img src={img.src} alt={`img-${index}`} />
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     );
