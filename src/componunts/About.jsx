@@ -1,6 +1,7 @@
 // About
 import React from "react";
 import "./About.scss";
+import CircularBtn from './CircularBtn';
 
 function About() {
     return(
@@ -12,12 +13,20 @@ function About() {
                         <p>도시 라이프스타일로서의 정원을 개발합니다</p>
                     </div>
                     <div className="about-link">
-                        <a href="/" className="round-btn">
-                            맞춤형<br />디자이너<br />설계
-                        </a>
-                        <a href="/" className="round-btn">
-                            그린<br />스페이스 &<br />콘텐츠 통합<br />솔루션
-                        </a>
+                        <CircularBtn as="a" href="#product" 
+                            text={
+                                <>
+                                맞춤형<br />디자이너<br />설계
+                                </>
+                            }
+                        />
+                        <CircularBtn as="a" href="#product" 
+                            text={
+                                <>
+                                그린<br />스페이스 &<br />콘텐츠 통합<br />솔루션
+                                </>
+                            }
+                        />
                     </div>
                 </div>
                 {/* <div className="about-a">

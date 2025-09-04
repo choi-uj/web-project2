@@ -19,8 +19,8 @@
 
     .circular-text {
         position: absolute;
-        width: 18rem;
-        height: 18rem;
+        width: 21rem;
+        height: 21rem;
         transform-origin: center;
         animation: rotateText 20s linear infinite;
         animation-play-state: paused; // ⬅️ 기본은 정지
@@ -28,7 +28,7 @@
 
         text {
             font-size: 1.3rem;
-            fill: #333;
+            fill: #333;font-weight: 500;
             letter-spacing: 3px;
         }
     }

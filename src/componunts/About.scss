@@ -27,20 +27,22 @@
     gap: 10rem;padding-left: 2.6rem;
 
     .round-btn {
-    background: var(--deepgreen);
-    color: var(--cream);
+        background: var(--deepgreen);
+        color: var(--cream);
+
+        .circular-text text {
+            fill: var(--deepgreen); // 원하는 색상으로 변경
+        }
+        &:hover {
+            background: var(--lightgreen);
+            color: var(--deepgreen);
+
+            .circular-text text {
+                fill: var(--lightgreen);
+            }
+        }
     }
-    .round-btn::after {
-        border: 1px solid var(--deepgreen);
-    }
-    .round-btn:hover {
-        background: var(--lightgreen);
-        color: var(--deepgreen);
-        font-weight: 500;
-    }
-    .round-btn:hover::after {
-        border: 1px solid var(--lightgreen);
-    }
+    
 }
 .about-round {
     display: flex;flex-direction: column;

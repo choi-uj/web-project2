@@ -25,6 +25,17 @@
         justify-content: center;align-items: center;
         width: 100%;height: 100%;
     }
+    .desc {
+            position: absolute;opacity: 0;
+            top: 60%;left: 50%;
+            transform: translateX(-50%);
+            width: 80%;text-align: center;
+            font-size: 1.6rem;line-height: 2rem;
+            color: var(--cream);
+            // opacity: 0;
+            transition: opacity 1s ease;
+            pointer-events: none;
+        }
 
     
     &:hover {
@@ -32,12 +43,18 @@
         transform: scaleX(1.05); /* hover 시 살짝 확대 효과 */
         transition: all 0.4s ease;
         
+        
         > a {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            padding-bottom: 5rem;
         }
         &::after {
             background: rgba($color: #000000, $alpha: 0.8);
         }
+        .desc {
+        opacity: 1;
+    }
+
     }
 
     &::before {
