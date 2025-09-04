@@ -1,10 +1,32 @@
 // Header.scss
 #header {
-    position: absolute;
+    position: fixed;
     top: 0;left: 0;right: 0;
     height: 10rem;color: #fff;
-    background: rgba(31,51,0,0.8);
+    background: rgba(31,51,0,0.6);
     z-index: 1000;
+    // ✅ 추가: 배경과 텍스트 색상 전환 부드럽게
+    transition: background 0.3s ease, color 0.3s ease;
+}
+#header:hover {
+    background: #fff;
+    color: var(--deepgreen);
+
+    h1 a {
+        display: block;
+        height: 8rem;aspect-ratio: 2.3 / 1;
+        background: url(/img/logo-small-green.png) 0 0 / auto 100% no-repeat;
+    }
+}
+#header.scrolled {
+    background: #fff;
+    color: var(--deepgreen);
+
+    h1 a {
+        display: block;
+        height: 8rem;aspect-ratio: 2.3 / 1;
+        background: url(/img/logo-small-green.png) 0 0 / auto 100% no-repeat;
+    }
 }
 #header .container {
     padding: 0 20rem;
@@ -34,27 +56,46 @@
     width: 12rem;font-size: 2.6rem;
     position: relative;
 
-        > a {padding: 2rem;}  
+        > a {padding: 3rem 2rem;}  
+        &:hover {
+            color: var(--lightgreen);
+        }
+        &:hover .dep2 {
+            display: flex;
+            max-height: 500px; // 충분히 큰 값으로 설정
+            opacity: 1;
+            transform: translateY(0);
+            padding: 3rem;
+        }
     }
 }
 
-#header .dep2 {
+.dep2 {
     position: absolute;
-    top: 7rem;left: -5rem;
-    padding: 3rem;width: 20rem;
+    top: 6rem;
+    left: -3rem;
+    padding: 0 3rem; // padding-top/bottom을 없애고 나중에 등장 시 줍니다
+    width: 20rem;
     display: flex;flex-direction: column;
-    gap: 2rem;border-radius: 2rem;
-    background: #fff;
-    border: 1px solid #000;
+    gap: 2rem;border-radius: 0 0 2rem 2rem;
+    background: #fff;text-align: center;
 
-    &.contact {display: none;}
+    // ✅ 애니메이션을 위한 초기 상태
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease, padding 0.3s ease;
+
     > li {
         font-size: 1.6rem;color: var(--deepgreen);
     
-        > a:hover {
+        &:hover a {
         font-weight: 700;color: var(--lightgreen);
+        padding: 1rem 0;
         }
     }
     
 }
+
 

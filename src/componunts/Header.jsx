@@ -1,10 +1,21 @@
 // Header.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.scss";
 
 function Header() {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return(
-        <header id="header">
+        <header id="header" className={isScrolled ? "scrolled" : ""}>
            <div className="container">
              <h1><a href="/"><span className="visually-hidden">서울 가드닝 클럽</span></a></h1>
              <nav id="gnb">
@@ -12,13 +23,13 @@ function Header() {
                      <li><a href="/">About</a>
                      </li>
                      <li><a href="/">Project</a>
-                         <ul className="dep2 project">
+                         <ul className="dep2">
                              <li><a href="/">맞춤형 디자이너 설계</a></li>
                              <li><a href="/">그린 스페이스 &<br /> 콘텐츠 통합 솔루션</a></li>
                          </ul>
                      </li>
                      <li><a href="/">Contact</a>
-                         <ul className="dep2 contact">
+                         <ul className="dep2">
                              <li><a href="/">통합공간기획</a></li>
                              <li><a href="/">주택조경</a></li>
                              <li><a href="/">상업조경</a></li>
