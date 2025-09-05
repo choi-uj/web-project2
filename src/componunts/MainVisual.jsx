@@ -12,7 +12,7 @@ function MainVisual() {
     const [isPlaying, setIsPlaying] = useState(true);
     const swiperRef = useRef(null);
     const images = [
-        './img/v01.jpg','./img/v02.jpg','./img/v03.jpg',
+        './img/v06.jpg','./img/v02.jpg','./img/v03.jpg',
         './img/v04.jpg','./img/v05.jpg'
     ];
     const toggleAutoplay = () => {

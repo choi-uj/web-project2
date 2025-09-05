@@ -3,20 +3,33 @@
 .news .container {
     display: flex;flex-direction: column;
     justify-content: center;align-items: center;
-    position: relative;gap: 10rem;
+    position: relative;gap: 10rem;padding-bottom: 10rem;
 
     h2 {color: var(--cream);}
-    >.round-btn {
+    .round-btn {
         position: absolute;
         top: 10rem;right: 22rem;
         width: 10rem;height: 10rem;
         background: var(--lightgreen);
         color: var(--deepgreen);
-        font-weight: 600;
+        
+        .btn-label{
+            font-weight: 500;
+        }
+        .circular-text {
+            width: 17rem;height: 17rem;
+        }
+        .circular-text text {
+            
+            fill: var(--lightgreen); 
+        }
+        &:hover {
+            background: var(--green);
+            color: var(--cream);
 
-        &::after {
-            width: 15rem;height: 15rem;
-            border: 1px solid var(--lightgreen);
+            .circular-text text {
+                fill: var(--green);
+            }
         }
     }
     .news-li {

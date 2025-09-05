@@ -1,13 +1,14 @@
 // News
 import React from "react";
 import "./News.scss"
+import CircularBtn from './CircularBtn';
 
 function News() {
     return(
         <section className="news">
             <div className="container">
                 <h2>News</h2>
-                <a href="/" className="round-btn">전체보기</a>
+                <CircularBtn as="a" href="#news" text={<>전체보기</>}/>
                 <ul className="news-li">
                    <li>
                         <a href="/">
