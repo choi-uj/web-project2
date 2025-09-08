@@ -1,35 +1,72 @@
-// About
 import React, { useEffect, useRef } from "react";
 import "./About.scss";
 import CircularBtn from './CircularBtn';
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 function About() {
     const aboutRef = useRef(null);
+    const innerRef = useRef(null);
+    const aboutARef = useRef(null);
 
     useEffect(() => {
-        const section = aboutRef.current;
-        const onScroll = () => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
+        const ctx = gsap.context(() => {
+            // 가로 스크롤
+            gsap.to(innerRef.current, {
+                xPercent: -100,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: aboutRef.current,
+                    start: "top top",
+                    end: () => "+=" + window.innerHeight,
+                    scrub: true,
+                    pin: true,
+                    onUpdate: (self) => {
+                        if (self.progress > 0.5) {
+                            aboutARef.current?.classList.add("active");
+                        } else {
+                            aboutARef.current?.classList.remove("active");
+                        }
+                    }
+                }
+            });
 
-            const start = sectionTop;
-            const end = sectionTop + sectionHeight - windowHeight;
+            // .about-a 위치 애니메이션
+            gsap.fromTo(
+                aboutARef.current,
+                { x: "100vw" }, // 화면 밖 우측에서 시작
+                {
+                    x: "0vw",
+                    scrollTrigger: {
+                        trigger: aboutRef.current,
+                        start: "top top",
+                        end: () => "+=" + window.innerHeight,
+                        scrub: true,
+                    }
+                }
+            );
+        }, aboutRef);
 
-            if (scrollY >= start && scrollY <= end) {
-                const progress = (scrollY - start) / (end - start);
-                section.querySelector('.about-inner').style.transform = `translateX(-${progress * 100}vw)`;
-            }
-        };
-
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
+        return () => ctx.revert();
     }, []);
 
-    return(
+    return (
         <section id="about" ref={aboutRef}>
-             <div className="about-inner">
+            {/* 이동 대상 요소 */}
+            <div className="about-a" ref={aboutARef}>
+                <div className="about-round">Green<br />Space<span>도시환경에 적합한<br />정원설계 및 시공</span></div>
+                <div className="a-center">
+                    <div className="about-round">Green<br />Lifestyle<span>정원에 기반한<br />경험-콘텐츠 개발</span></div>
+                    <h3>SEOUL<br />GARDENING<br />CLUB</h3>
+                </div>
+                <div className="about-round">Green<br />Research<span>정원을 통한<br />공간 솔루션 연구</span></div>
+            </div>
+
+            {/* 내부 페이지 구조 */}
+            <div className="about-inner" ref={innerRef}>
                 {/* Page 1 */}
                 <div className="about-page about-page-1">
                     <div className="about-menu">
@@ -42,22 +79,10 @@ function About() {
                             <CircularBtn as="a" href="#product" text={<>그린<br />스페이스 &<br />콘텐츠 통합<br />솔루션</>} />
                         </div>
                     </div>
-
-                    <div className="about-a about-a-1">
-                        <div className="about-round">Green<br />Space<span>도시환경에 적합한<br />정원설계 및 시공</span></div>
-                        <div className="a-center">
-                            <div className="about-round">Green<br />Lifestyle<span>정원에 기반한<br />경험-콘텐츠 개발</span></div>
-                            <h3>SEOUL<br />GARDENING<br />CLUB</h3>
-                        </div>
-                        <div className="about-round">Green<br />Research<span>정원을 통한<br />공간 솔루션 연구</span></div>
-                    </div>
                 </div>
 
                 {/* Page 2 */}
                 <div className="about-page about-page-2">
-                    <div className="about-a active">
-                        {/* 디자인 변경된 about-a 재사용 또는 생략 */}
-                    </div>
                     <div className="about-b">
                         <div className="about-round">Labor!<span>자연과 연결되는<br />참된 노동</span></div>
                         <div className="b-center">

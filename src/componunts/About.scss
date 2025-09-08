@@ -1,121 +1,114 @@
-// about.scss
 #about {
     position: relative;
     width: 100vw;
-    height: 200vh; // 2페이지 분량
+    height: 100vh;
     overflow: hidden;
     background: var(--cream);
 }
+
 .about-inner {
     display: flex;
     width: 200vw;
     height: 100vh;
-    transition: transform 0.4s ease-out;
+    padding: 0;
 }
+
 .about-page {
     width: 100vw;
     height: 100vh;
     display: flex;
-    gap: 5rem;
-    background: var(--cream);
-    padding: 2rem;
-}
-.about-menu, .about-a, .about-b {
-    width: 50%;
-}
-.about-a .about-round span {
-    display: none;
-}
-
-.about-a.active .about-round {
-    width: 25rem;
-    border-radius: 10rem;
-    font-size: 2.4rem;
-
-    span {
-        display: block;
-        font-size: 1.6rem;
-    }
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .about-menu {
-    display: flex;flex-direction: column;
-    gap: 10rem;width: calc(50% - 2rem);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4rem;
 }
 
-.about-h {
-    display: flex;flex-direction: column;
-    gap: 3rem;
+.about-a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+    z-index: 2;
 
-    h2 {
-    color: var(--deepgreen);
+    .about-round span {
+        display: none;
     }
-    p {
+}
+
+.about-a.active {
+    .about-round {
+        width: 25rem;
+        border-radius: 10rem;
         font-size: 2.4rem;
-        color: var(--green);
+
+        span {
+            display: block;
+            font-size: 1.6rem;
+        }
+    }
+
+    h3 {
+        color: var(--lightgreen);
     }
 }
 
+.about-b {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
 
-.about-link {
-    display: flex;flex-direction: row;
-    gap: 10rem;padding-left: 2.6rem;
-
-    .round-btn {
-        background: var(--deepgreen);
-        color: var(--cream);
-
-        .circular-text text {
-            fill: var(--deepgreen); // 원하는 색상으로 변경
-        }
-        &:hover {
-            background: var(--lightgreen);
-            color: var(--deepgreen);
-
-            .circular-text text {
-                fill: var(--lightgreen);
-            }
+    .about-round {
+        width: 25rem;
+        border-radius: 10rem;
+        background: var(--lightgreen);
+        color: var(--deepgreen);
+        span {
+            display: block;
+            font-size: 1.6rem;
         }
     }
-    
 }
-.about-round {
-    display: flex;flex-direction: column;
-    justify-content: center;align-items: center;
-    width: 18rem;height: 18rem;
-    border-radius: 50%;
-    background: var(--deepgreen);
-    text-align: center;line-height: 5rem;
-    font-size: 3rem;font-weight: 400;
-    color: var(--cream);
-}
-.about-a, .about-b {
-    display: flex;flex-direction: column;
-    justify-content: space-between;align-items: center;
-    width: calc(50% - 2rem);
-}
+
 .a-center, .b-center {
     display: flex;
-    justify-content: space-between;align-items: center;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
 
     h3 {
-        font-size: 4.8rem;font-weight: 700;
+        font-size: 4.8rem;
+        font-weight: 700;
         color: var(--deepgreen);
     }
 }
 
-
-
-.about-b {
-
-    .about-round {
-        width: 25rem;border-radius: 10rem;
-        background: var(--lightgreen);
-        color: var(--deepgreen);
-    }
-    .about-round span {
-        font-size: 1.6rem;line-height: 2rem;
-    }
+.about-round {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    background: var(--deepgreen);
+    color: var(--cream);
+    font-size: 3rem;
+    text-align: center;
+    line-height: 5rem;
 }
-
