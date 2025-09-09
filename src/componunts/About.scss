@@ -1,77 +1,118 @@
+#about-wrapper {
+  height: 200vh; // 두 페이지 수평 스크롤을 위해 필요
+  position: relative;
+  overflow: visible; // hidden이거나 다른 속성일 경우 스크롤 제한 가능성 있음
+  margin: 0; // 마진 제거
+  padding: 0;
+}
+
 #about {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background: var(--cream);
+  position: sticky; // fixed → sticky로 변경 (top: 0)
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--cream);
+  overflow: hidden;
+  z-index: 10;
 }
 
 .about-inner {
     display: flex;
     width: 200vw;
-    height: 100vh;
-    padding: 0;
+    height: 100%;
+    transition: transform 0.2s ease-out;
+    will-change: transform;
 }
 
 .about-page {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
+    width: 100vw;height: 100vh;
+    flex-shrink: 0;display: flex;
 }
 
 .about-menu {
-    width: 50%;
+    width: 50vw;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 4rem;
+    flex-direction: column;justify-content: start;
+    // padding: 10rem 0 10rem 20rem;
+    gap: 10rem;
+
+    .about-h {
+        display: flex;flex-direction: column;
+        gap: 3rem;color: var(--deepgreen);
+
+        p {
+            color: var(--green);
+        }
+    }
+}
+.about-link {
+    display: flex;width: 50rem;
+    gap: 10rem;padding-left: 5rem;
+    
+    .round-btn {
+        color: var(--cream);
+        background: var(--deepgreen);
+
+        .btn-label{
+            line-height: 2rem;
+        }
+        .circular-text text {
+            fill: var(--deepgreen);
+        }
+        &:hover {
+            color: var(--deepgreen);
+            background: var(--lightgreen);
+        }
+        &:hover .circular-text text{
+            fill: var(--lightgreen);
+        }
+    }
 }
 
 .about-a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50vw;
-    height: 100%;
-    display: flex;
+    width: 50vw;height: 100vh;
+    display: flex;box-sizing: border-box;
     flex-direction: column;
+    left: 50vw;
     justify-content: space-between;
     align-items: center;
-    padding: 4rem;
-    z-index: 2;
+    // padding: 10rem 20rem 10rem 0;
+    z-index: 10;
+    transition: all 0.3s ease;
+    // background: var(--cream); // 필요시, 배경 겹침 방지
 
     .about-round span {
         display: none;
     }
-}
 
-.about-a.active {
-    .about-round {
-        width: 25rem;
-        border-radius: 10rem;
-        font-size: 2.4rem;
+    &.active {
+        // padding: 10rem 0 10rem 20rem;
 
-        span {
+        .about-round {
+            width: 25rem;
+            border-radius: 10rem;
+            font-size: 2.4rem;line-height: 2.4rem;
+            gap: 1.6rem;
+
+            span {
             display: block;
             font-size: 1.6rem;
+            }
         }
-    }
 
-    h3 {
-        color: var(--lightgreen);
+        h3 {
+            color: var(--lightgreen);
+        }
     }
 }
 
 .about-b {
-    width: 50%;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 4rem;
+    // padding: 10rem 20rem;
 
     .about-round {
         width: 25rem;
