@@ -4,56 +4,52 @@ import "./About.scss";
 import CircularBtn from "./CircularBtn";
 
 function About() {
-    const aboutRef = useRef(null);
-    const innerRef = useRef(null);
-    const aboutARef = useRef(null);
+  const aboutRef = useRef(null);
+  const innerRef = useRef(null);
+  const [isFixed, setIsFixed] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (!wrapperRef.current || !innerRef.current) return;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!aboutRef.current) return;
 
-            const wrapper = wrapperRef.current;
-            const inner = innerRef.current;
-            const scrollY = window.scrollY;
-            const wrapperTop = wrapper.offsetTop;
-            const windowHeight = window.innerHeight;
+      const scrollY = window.scrollY;
+      const sectionTop = aboutRef.current.offsetTop;
+      const sectionHeight = aboutRef.current.offsetHeight;
+      const windowHeight = window.innerHeight;
 
-            const scrollLength = windowHeight; // 스크롤 구간
+      // Calculate the scroll range for the horizontal animation
+      const startScroll = sectionTop + windowHeight;
+      const endScroll = startScroll + windowHeight; // Animate over one window height
 
-            const startScroll = wrapperTop;
-            const endScroll = wrapperTop + scrollLength;
+      if (scrollY >= startScroll && scrollY <= endScroll) {
+        setIsFixed(true);
+        // Calculate progress within the fixed scroll range
+        const progress = (scrollY - startScroll) / windowHeight;
+        setScrollProgress(progress);
+      } else if (scrollY > endScroll) {
+        setIsFixed(false);
+        setScrollProgress(1); // Ensure it's at the end state
+      } else {
+        setIsFixed(false);
+        setScrollProgress(0); // Reset to initial state
+      }
+    };
 
-            if (scrollY < startScroll) {
-                inner.style.transform = "translateX(0vw)";
-                aboutARef.current?.classList.remove("active");
-                return;
-            }
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-            if (scrollY > endScroll) {
-                inner.style.transform = "translateX(-100vw)";
-                aboutARef.current?.classList.add("active");
-                return;
-            }
-
-            const progress = (scrollY - startScroll) / scrollLength;
-
-            // console.log(progress); // 디버깅용
-
-            inner.style.transform = `translateX(-${progress * 100}vw)`;
-
-            if (progress > 0.3) {
-                aboutARef.current?.classList.add("active");
-            } else {
-                aboutARef.current?.classList.remove("active");
-            }
-        };
-
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-
+  useEffect(() => {
+    // Manage body and section classes for fixing
+    if (isFixed) {
+      document.body.classList.add('fixed-scroll');
+      aboutRef.current.classList.add('fixed');
+    } else {
+      document.body.classList.remove('fixed-scroll');
+      aboutRef.current.classList.remove('fixed');
+    }
+  }, [isFixed]);
 
     return (
         <section id="about-wrapper" ref={aboutRef}>
