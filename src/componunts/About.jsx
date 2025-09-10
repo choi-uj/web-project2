@@ -1,39 +1,19 @@
 // About.jsx
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./About.scss";
 import CircularBtn from "./CircularBtn";
 
 function About() {
   const aboutRef = useRef(null);
   const innerRef = useRef(null);
-  const [isFixed, setIsFixed] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const aboutARef = useRef(null); // 추가된 부분: aboutARef를 useRef로 선언
 
+  const [isFixed, setIsFixed] = useState(false); // 추가된 부분: isFixed 상태 선언
+
+  // Scroll 핸들러를 삭제하여 가로 스크롤과 관련된 로직을 제거
   useEffect(() => {
     const handleScroll = () => {
-      if (!aboutRef.current) return;
-
-      const scrollY = window.scrollY;
-      const sectionTop = aboutRef.current.offsetTop;
-      const sectionHeight = aboutRef.current.offsetHeight;
-      const windowHeight = window.innerHeight;
-
-      // Calculate the scroll range for the horizontal animation
-      const startScroll = sectionTop + windowHeight;
-      const endScroll = startScroll + windowHeight; // Animate over one window height
-
-      if (scrollY >= startScroll && scrollY <= endScroll) {
-        setIsFixed(true);
-        // Calculate progress within the fixed scroll range
-        const progress = (scrollY - startScroll) / windowHeight;
-        setScrollProgress(progress);
-      } else if (scrollY > endScroll) {
-        setIsFixed(false);
-        setScrollProgress(1); // Ensure it's at the end state
-      } else {
-        setIsFixed(false);
-        setScrollProgress(0); // Reset to initial state
-      }
+      // 여기에 가로스크롤이나 다른 스크롤과 관련된 로직은 없애면 됨
     };
 
     window.addEventListener('scroll', handleScroll);

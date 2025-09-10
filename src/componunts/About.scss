@@ -1,51 +1,32 @@
 #about-wrapper {
   position: relative;
   width: 100%;
-  height: 200vh; /* This is the key. Make the section twice as tall. */
-  background: var(--cream);
-  overflow: hidden; /* Prevent horizontal scrollbar */
-}
-
-#about {
-  position: sticky;
-  top: 0;
-  width: 100%;
   height: 100vh;
+  background: var(--cream);
 }
 
-#about-wrapper.fixed {
-  height: 200vh; /* When fixed, it acts as the scroll container */
-}
-
-#about-wrapper.fixed #about {
-  position: fixed;
-}
-/* The following section replaces the fixed-scroll logic and simplifies it */
-#about-wrapper.is-animating {
-  overflow: hidden;
-}
 
 .about-inner {
     display: flex;
     width: 200vw;height: 100%;
     transition: transform 0.2s ease-out;
-    // will-change: transform;
+    will-change: transform;
 }
 
 .about-page {
     width: 100vw;height: 100vh;
     flex-shrink: 0;
-    // display: flex;
+    display: flex;
 }
 
 .about-menu {
     position: absolute;
     top: 50%;left: 50%;
     transform: translate(-50%, -50%);
-    // width: 50vw;
+    width: 50vw;
     display: flex;
     flex-direction: column;justify-content: start;
-    // padding: 10rem 0 10rem 20rem;
+    padding: 10rem 0 10rem 20rem;
     gap: 10rem;
 
     .about-h {
