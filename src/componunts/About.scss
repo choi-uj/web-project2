@@ -2,6 +2,7 @@
     position: relative;
     overflow: hidden;
     background: var(--cream);
+    overflow: hidden; // 필요하다면 auto
 }
 
 .about-inner {
@@ -11,43 +12,43 @@
     color: var(--cream);
 }
 
-// .about-toggle-btn {
-//     position: absolute;z-index: 20;
-//     display: flex;
-//     justify-content: center;align-items: center;
-//     top: 50%;left: 8rem;
-//     width: 8rem;height: 8rem;
-//     border-radius: 50%;
-//     background: var(--deepgreen);
+.about-toggle-btn {
+    position: absolute;z-index: 20;
+    display: flex;
+    justify-content: center;align-items: center;
+    bottom: 15rem;left: 8rem;
+    width: 8rem;height: 8rem;
+    border-radius: 50%;
+    background: var(--deepgreen);
 
-//     .handleToggle {
-//         border: none;
-//     }
+    /* 포커스 시 스타일 제거 */
+    &:focus {
+        outline: none;
+        border: none;
+    }
+    &:hover {
+        background: var(--lightgreen);
+        color: var(--deepgreen);
+    }
     
-//     i {
-//         font-size: 4rem;font-weight: 300;
-//     }
-// }
+    i {
+        font-size: 4rem;
+    }
+}
 
 .about-pages {
   display: flex;
-//   width: 200%; // 두 페이지가 좌우로 나란히 있다고 가정
-//   transition: transform 0.5s ease;
-//   transform: translateX(0%);
-  width: 100vw;
-  height: 100vh;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; // for iOS smooth scroll
-  scroll-behavior: smooth;
+  width: 200%; // 두 페이지가 좌우로 나란히 있다고 가정
+  transition: transform 0.5s ease;
+  transform: translateX(0%);
 
   &::-webkit-scrollbar {
     display: none; // 스크롤바 숨김
   }
 
-//   &.show-second {
-//     transform: translateX(-50vw); // 두 번째 페이지로 이동
-//   }
+  &.show-second {
+    transform: translateX(-50vw); // 두 번째 페이지로 이동
+  }
 }
 .about-page {
 // flex-shrink: 0;
@@ -60,18 +61,6 @@
 .about-page {
     display: flex;
 }
-
-// .about-page-1 {
-//     width: 100vw;height: 100vh;
-//     flex-shrink: 0;
-//     display: flex;
-//     justify-content: space-between;
-// }
-// .about-page-2 {
-//     width: 100vw;height: 100vh;
-//     flex-shrink: 0;
-//     display: flex;
-// }
 
 .about-menu {
     width: 50vw;
@@ -120,7 +109,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 10rem 20rem 10rem 0;
-    // z-index: 10;
     transition: all 0.3s ease;
 
     .about-round span {
@@ -128,22 +116,25 @@
     }
 
     &.active {
-        padding: 10rem 2rem 10rem 20rem;
+        padding: 10rem 0rem 10rem 20rem;
 
         .about-round {
             width: 25rem;
             border-radius: 10rem;
             font-size: 2.4rem;line-height: 2.4rem;
             gap: 1.6rem;
+            transition: width 0.5s ease;
 
             span {
             display: block;
             font-size: 1.6rem;
+            transition: all 0.5s ease;
             }
         }
 
         h3 {
             color: var(--lightgreen);
+            transition: all 0.5s ease;
         }
     }
 }
@@ -154,7 +145,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 10rem 20rem 10rem 2rem;
+    padding: 10rem 20rem 10rem 4rem;
 
     .about-round {
         width: 25rem;

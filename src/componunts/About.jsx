@@ -4,34 +4,22 @@ import "./About.scss";
 import CircularBtn from "./CircularBtn";
 
 function About() {
-    const scrollRef = useRef(null);
-    const [isFirstPage, setIsFirstPage] = useState(true);
+    const [showSecondPage, setShowSecondPage] = useState(false);
 
-    const handleScroll = () => {
-        if (!scrollRef.current) return;
-        const scrollX = scrollRef.current.scrollLeft;
-        const pageWidth = window.innerWidth;
-        setIsFirstPage(scrollX < pageWidth / 2);
+    const handleToggle = () => {
+        setShowSecondPage(prev => !prev);
     };
-
-    useEffect(() => {
-        const current = scrollRef.current;
-        if (!current) return;
-
-        current.addEventListener("scroll", handleScroll);
-        return () => current.removeEventListener("scroll", handleScroll);
-    }, []);
 
     return (
         <section id="about">
           <div className="about-inner">
                 {/* Toggle Button */}
-                {/* <button className="about-toggle-btn" onClick={handleToggle}>
+                <button className="about-toggle-btn" onClick={handleToggle}>
                     {showSecondPage ? 
                     < i className="ri-arrow-left-double-line"></i> : 
                     < i className="ri-arrow-right-double-line"></i>}
-                </button> */}
-                <div className="about-pages horizontal-scroll" ref={scrollRef}>
+                </button>
+                <div className={`about-pages ${showSecondPage ? "show-second" : ""}`}>
                     {/* Page 1 */}
                     <div className="about-page about-page-1">
                         <div className="about-menu">
@@ -45,7 +33,7 @@ function About() {
                             </div>
                         </div>
                     
-                        <div className={`about-a ${isFirstPage ? "active" : ""}`}>
+                        <div className={`about-a ${!showSecondPage ? "" : "active"}`}>
                             <div className="about-round">Green<br />Space<span>도시환경에 적합한<br />정원설계 및 시공</span></div>
                             <div className="a-center">
                             <div className="about-round">Green<br />Lifestyle<span>정원에 기반한<br />경험-콘텐츠 개발</span></div>

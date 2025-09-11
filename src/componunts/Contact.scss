@@ -7,29 +7,62 @@
 .cont-txt {
     display: flex;flex-direction: column;
     gap: 10rem;padding: 10rem 0 0 10rem;
+}
+.contact-main {
+    display: flex;flex-direction: column;
+    gap: 2rem;
 
-    .process {
-        display: flex;flex-direction: column;
-        gap: 8rem;padding: 0 3rem;
+    .process-btn {
+        display: flex;flex-direction: row;
+        gap: 2rem;
+        width: 100%;
 
-        .round-btn {
-            background: var(--lightgreen);
-            color: var(--deepgreen);
-        }
-        .round-btn::after {
-            border: solid 1px var(--lightgreen);
-        }
-        li {
-            list-style: disc;color: var(--green);
-            font-size: 2.4rem;line-height: 4rem;
+        a {
+            width: 2rem;height: 2rem;
+            border: 1px solid var(--green);
+            border-radius: 50%;
+            cursor: pointer;
         }
     }
-    
-
 }
+.process {
+    display: flex;flex-direction: column;
+    gap: 8rem;padding: 0 3rem;
 
+
+    li {
+        list-style: disc;color: var(--green);
+        font-size: 2.4rem;line-height: 4rem;
+    }
+}
+.cont-2p,.cont-3p,.cont-4p,.cont-5p,.cont-6p {
+    display: none;
+}
+.contact-btn {
+    .round-btn {
+        background: var(--lightgreen);
+        color: var(--deepgreen);
+
+        .btn-label{
+            line-height: 2rem;
+        }
+        .circular-text text {
+            fill: var(--lightgreen);
+        }
+        &:hover {
+            color: var(--cream);
+            background: var(--green);
+        }
+        &:hover .circular-text text{
+            fill: var(--green);
+        }
+    }
+}
 .cont-img {
     display: flex;
     width: 50vw;height: 100vh;
-    background: url(/img/build01.jpg) center / cover;
+
+    &.c-1p {
+        background: url(/img/build01.jpg) center / cover;
+    }
 }

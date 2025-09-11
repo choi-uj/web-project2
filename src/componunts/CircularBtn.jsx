@@ -2,7 +2,7 @@
 import React from 'react';
 import './CircularBtn.scss';
 
-const CircularBtn = ({ text = "SEOUL GARDENING CLUB", repeat = 3, as = 'div', href = '#' }) => {
+const CircularBtn = ({ text = "", repeat = 3, as = 'div', href = '#' }) => {
   const repeatedText = Array(repeat).fill(`${text} • `).join('');
   const Tag = as; // div, a, button 등
 

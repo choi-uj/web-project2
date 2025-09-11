@@ -40,12 +40,13 @@
                 width: 2rem;height: 2rem;
                 background: none;
                 opacity: 1;
-                border: 1px solid #CAD790;
+                border: 1px solid var(--cream);
 
             }
 
             .swiper-pagination-bullet-active {
-                background: #CAD790;
+                background: var(--lightgreen);
+                border: 1px solid var(--lightgreen);
             }
         }
     }
@@ -65,8 +66,8 @@
         outline: none;  // ← 포커스 아웃라인 제거
 
         &:hover {
-            background: var(--deepgreen);
-            color: #FFF1DB;
+            background: var(--green);
+            color: var(--cream);
         }
 
         &:focus {
@@ -76,14 +77,14 @@
         &::after {
             position: absolute;
             content: ''; // 이게 없으면 ::after는 나타나지 않음
-            width: 6rem;height: 6rem;
-            border: 1px solid #FFF1DB;
+            width: 7rem;height: 7rem;
+            border: 1px solid var(--cream);
             border-radius: 50px;
             z-index: -1;
         }
 
         &:hover::after {
-            border: 1px solid var(--deepgreen);
+            border: 1px solid var(--green);
         }
     }
 }
