@@ -22,13 +22,13 @@ function Header() {
                  <ul className="dep1">
                      <li><a href="/">About</a>
                      </li>
-                     <li><a href="/">Project</a>
+                     <li><a href="/">Contact</a>
                          <ul className="dep2">
                              <li><a href="/">맞춤형 디자이너 설계</a></li>
                              <li><a href="/">그린 스페이스 &<br /> 콘텐츠 통합 솔루션</a></li>
                          </ul>
                      </li>
-                     <li><a href="/">Contact</a>
+                     <li><a href="/">Project</a>
                          <ul className="dep2">
                              <li><a href="/">통합공간기획</a></li>
                              <li><a href="/">주택조경</a></li>

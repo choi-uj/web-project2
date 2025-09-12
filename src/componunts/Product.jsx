@@ -7,7 +7,8 @@ import img3 from "/img/rt-01.jpg";
 import img4 from "/img/rt-11.jpg";
 import img5 from "/img/rt-04.jpg";
 import img6 from "/img/rt-02.jpg";
-import CircularBtn from './CircularBtn';
+import './CircularBtn';
+import "./OmgSize";
 
 function Product() {
     const images = [
