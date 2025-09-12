@@ -2,11 +2,12 @@
 .contact {
     display: flex;flex-direction: row;
     justify-content: space-between;align-items: start;
-    background: var(--cream);
+    background: var(--cream);width: 100vw;
 }
 .cont-txt {
     display: flex;flex-direction: column;
     gap: 10rem;padding: 10rem 0 0 10rem;
+    width: 50vw;
 }
 .contact-main {
     display: flex;flex-direction: column;
@@ -62,7 +63,4 @@
     display: flex;
     width: 50vw;height: 100vh;
 
-    &.c-1p {
-        background: url(/img/build01.jpg) center / cover;
-    }
 }
