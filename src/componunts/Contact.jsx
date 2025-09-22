@@ -46,8 +46,9 @@ function Contact() {
                         <div className="process cont-2p">
                             <div className="contact-btn">
                                 <CircularBtn
-                                    as="a" href="#"
+                                    as="a" href="#!"
                                     text={<>Step 2.<br />현장방문<br />및 상담</>}
+                                    onClick={() => setStep(3)}
                                 />
                             </div>
                             <ul>
@@ -60,8 +61,9 @@ function Contact() {
                         <div className="process cont-3p">
                             <div className="contact-btn">
                                 <CircularBtn
-                                    as="a" href="#"
+                                    as="a" href="#!"
                                     text={<>Step 3.<br />계약확정</>}
+                                    onClick={() => setStep(4)}
                                 />
                             </div>
                             <ul>
@@ -73,8 +75,9 @@ function Contact() {
                         <div className="process cont-4p">
                             <div className="contact-btn">
                                 <CircularBtn
-                                    as="a" href="#"
+                                    as="a" href="#!"
                                     text={<>Step 4.<br />디자인</>}
+                                    onClick={() => setStep(5)}
                                 />
                             </div>
                             <ul>
@@ -87,8 +90,9 @@ function Contact() {
                     <div className="process cont-5p">
                         <div className="contact-btn">
                             <CircularBtn
-                                as="a" href="#"
+                                as="a" href="#!"
                                 text={<>Step 5.<br />조성 및<br />시공</>}
+                                onClick={() => setStep(6)}
                             />
                         </div>
                         <ul>
@@ -102,8 +106,9 @@ function Contact() {
                     <div className="process cont-6p">
                         <div className="contact-btn">
                             <CircularBtn
-                                as="a" href="#"
+                                as="a" href="#!"
                                 text={<>Step 6.<br />완료 후<br />모니터링</>}
+                                onClick={() => setStep(1)}
                             />
                         </div>
                         <ul>

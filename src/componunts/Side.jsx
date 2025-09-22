@@ -6,7 +6,7 @@ function Side() {
         <div className="side">
             <div className="side-menu">
                 <button><i className="ri-instagram-line"></i></button>
-                <button><i className="ri-chat-smile-ai-line"></i></button>
+                <button onClick="window.open('http://pf.kakao.com/_xjxcEDn', '_blank')"><i className="ri-chat-smile-ai-line"></i></button>
                 <button><span>1:1</span></button>
             </div>
             <button className="side-home">
