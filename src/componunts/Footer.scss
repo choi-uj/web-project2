@@ -2,21 +2,22 @@
 #footer {
     background: var(--deepgreen);
     width: 100vw;
+
+    .container {
+        display: flex;gap: 10rem;
+        padding-bottom: 3rem;
+    }
 }
-.container {
-    display: flex;gap: 10rem;
-    padding-bottom: 3rem;
-}
+
 .footer-logo img {
     height: 30vh;
     padding-bottom: 7rem;
 }
 .footer-txt {
-    // width: 100%;
+    width: 100%;
     display: flex;flex-direction: column;
     justify-content: space-between;gap: 5rem;
     color: var(--cream);
-    
 }
 address {
     display: flex;flex-direction: column;
@@ -60,16 +61,18 @@ address {
 }
 
 @media screen and (max-width: 1280px) {
-    .container {
-        flex-direction: column;
-        gap: 0;
+    #footer .container {
         padding: 10rem 5rem 3rem 5rem;
     }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 970px) {
+    #footer .container {
+        flex-direction: column;
+        gap: 0;
+    }
     .footer-logo img {
-        height: 25rem;
+        height: 23rem;
     }
 
 }

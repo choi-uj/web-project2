@@ -12,6 +12,11 @@
         background: var(--lightgreen);
         padding: 2rem 1rem;border-radius: 5rem;
         gap: 2rem;
+        transition: background 0.2s;
+
+        &:hover {
+            background: var(--green);
+        }
 
         button {
             display: flex;justify-content: center;align-items: center;
@@ -25,6 +30,11 @@
             }
             i {
                 font-size: 2.4rem;
+            }
+            &:focus {outline: none;}
+            &:active {
+                background: var(--deepgreen);
+                color: var(--cream);
             }
         }
     }
@@ -43,7 +53,12 @@
             max-width: 100%;
             max-height: 100%;
         }
-
+        &:hover {
+            background: var(--green);
+            color: var(--cream);
+            border: 1px solid var(--green);
+        }
+        &:focus {outline: none;}
     }
 }
 

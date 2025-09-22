@@ -11,7 +11,9 @@ function Footer() {
                     <address>
                         (주)그린디벨롭먼트<br />
                         <div className="footer-contact">
-                            <span>Office</span> &nbsp;서울특별시 강남구 논현로24길 37, 201호 (우 : 06300)<br />
+                            <span>Office</span> &nbsp;서울특별시 강남구 논현로24길 37, 201호 
+                            <div className="footer-full"> (우 : 06300)</div>
+                            <div className="footer-half"><br/>(우 : 06300)</div><br />
                             <span>대표</span>&nbsp; 이가영
                             <span>&nbsp; | &nbsp;   Tel </span> 010-4360-4301
                             <span  className="footer-full">&nbsp; | &nbsp;  E-mail </span>
