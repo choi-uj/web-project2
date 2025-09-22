@@ -11,7 +11,7 @@ function News() {
                 <CircularBtn as="a" href="#news" text={<>전체보기</>}/>
                 <ul className="news-li">
                    <li>
-                        <a href="/">
+                        <a href="https://www.hani.co.kr/arti/area/capital/1152927.html" target="_blank" rel="noopener noreferrer">
                             <div className="n-img"><img src="./img/n01.png" alt="" /></div>
                             <div className="n-txt">
                                 <strong>
@@ -27,7 +27,7 @@ function News() {
                         </a>
                    </li>
                    <li>
-                        <a href="/">
+                        <a href="https://www.donga.com/news/Society/article/all/20240730/126190575/2" target="_blank" rel="noopener noreferrer">
                             <div className="n-img"><img src="./img/n02.jpg" alt="" /></div>
                             <div className="n-txt">
                                 <strong>
@@ -42,7 +42,7 @@ function News() {
                         </a>
                    </li>
                    <li>
-                        <a href="/">
+                        <a href="https://magazine.brique.co/brq-news/architecture-classes-for-gardeners/" target="_blank" rel="noopener noreferrer">
                             <div className="n-img"><img src="./img/n03.jpg" alt="" /></div>
                             <div className="n-txt">
                                 <strong>

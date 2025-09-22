@@ -32,32 +32,46 @@
             }
         }
     }
-    .news-li {
-        display: flex;gap: 5rem;
+}
+.news-li {
+    display: flex;gap: 5rem;
 
-        > li {
+    > li {
+        display: flex;flex-direction: column;
+        background: var(--cream);
+        width: 100%;
+
+        > a {
+            position: relative;
             display: flex;flex-direction: column;
-            background: var(--cream);
-            width: 100%;
+            padding: 3rem;gap: 3rem;
 
-            > a {
-                position: relative;
-                display: flex;flex-direction: column;
-                padding: 3rem;gap: 3rem;
+            button {
+                display: flex;position: absolute;
+                bottom: 3rem;right: 3rem;
+                justify-content: center;align-items: center;
+                width: 6rem;height: 6rem;
+                background: var(--lightgreen);
+                border-radius: 50%;
+                color: var(--deepgreen);
 
-                button {
-                    display: flex;position: absolute;
-                    bottom: 3rem;right: 3rem;
-                    justify-content: center;align-items: center;
-                    width: 6rem;height: 6rem;
-                    background: var(--lightgreen);
-                    border-radius: 50%;
-                    color: var(--deepgreen);
+                &:hover {
+                background: var(--deepgreen);
+                color: var(--cream);
+            }
+            }
+
+            
+            &:hover .n-img {
+                img {
+                    transform: scale(1.1);
+                    transition: transform 0.2s;
                 }
             }
         }
     }
 }
+
 .n-txt {
     display: flex;flex-direction: column;
     gap: 3rem;
@@ -82,7 +96,7 @@
 }
 .n-img {
     width: 100%;
-    // background: url(/img/n01.png) center / cover;
+    overflow: hidden;
 
     img {
         width: 100%;aspect-ratio: 3/2;
@@ -95,3 +109,31 @@
     color: var(--deepgreen);
 }
 
+@media screen and (max-width: 1280px) {
+    .news .container {
+        .round-btn {
+            right: 10rem;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .news .container {
+        justify-content: center;align-items: start;
+    }
+    .news-li {
+        flex-direction: column;
+
+        >li {
+            > a {
+                align-items: start;justify-content: start;
+            }
+        }
+    }
+    .n-img {
+        img {
+            width: 100%;aspect-ratio: 2/1;
+            object-fit: cover;
+        }
+    }
+}
