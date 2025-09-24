@@ -22,9 +22,9 @@ function Header() {
         <header id="header" className={isScrolled ? "scrolled" : ""}>
            <div className="container">
                 <h1><a href="/"><span className="visually-hidden">서울 가드닝 클럽</span></a></h1>
-            {/* ✅ 햄버거 버튼 */}
-            <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
-                <i className={`ri-arrow-${isMenuOpen ? "up" : "down"}-s-line`}></i>
+            {/* ✅ 토글 버튼 */}
+            <button className={`menu-toggle  ${isMenuOpen ? "open" : ""}`} onClick={toggleMenu} aria-label="Toggle menu">
+                <i className="ri-arrow-down-s-line"></i> {/* 아이콘 고정 */}
             </button>
             {/* ✅ 메뉴 열림 여부에 따라 클래스 추가 */}
              <nav id="gnb" className={isMenuOpen ? "open" : ""} >

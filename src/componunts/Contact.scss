@@ -1,12 +1,13 @@
 // Contact.scss
 .contact {
     display: flex;flex-direction: row;
-    justify-content: space-between;align-items: start;
-    background: var(--cream);width: 100vw;
+    justify-content: space-between;
+    background: var(--cream);
+    width: 100vw;
 }
 .cont-txt {
     display: flex;flex-direction: column;
-    gap: 10rem;padding: 10rem 0 0 10rem;
+    gap: 6rem;padding: 10rem 0 0 20rem;
     width: 50vw;
 }
 .contact-main {
@@ -32,7 +33,7 @@
 }
 .process {
     display: flex;flex-direction: column;
-    gap: 8rem;padding: 0 3rem;
+    gap: 6rem;padding: 0 3rem 10rem 3rem;
 
     li {
         list-style: disc;color: var(--green);
@@ -62,7 +63,8 @@
 }
 .cont-img {
     display: flex;
-    width: 50%;height: 100vh;
+    width: 50%;
+    height: auto;
 
     img {
         width: 100%;height: 100%;

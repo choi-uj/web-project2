@@ -121,13 +121,13 @@
         justify-content: center;
         align-items: center;
         width: 6rem;height: 6rem;
-        border-radius: 50%;
-        background: var(--deepgreen);
+        border-radius: 50%;background: var(--deepgreen);
+        border: none;cursor: pointer;
 
         i {
             font-size: 3rem;
             color: var(--cream);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease; // 부드럽게 회전
         }
         
         &:focus {
@@ -135,9 +135,10 @@
             box-shadow: none;
             border: none;
         }
-        &.up {
-            background: var(--lightgreen);
+        &.open i {
+            transform: rotate(180deg); // 메뉴가 열릴 때 아이콘 회전
         }
+
     }
     
 
@@ -148,20 +149,17 @@
         background: #fff;
         flex-direction: column;
         align-items: flex-start;
-        // padding: 2rem;
         display: flex; // 기본은 닫힘
         z-index: 1500;
 
-        transform: translateY(-10px);
         opacity: 0;
-        transition: transform 0.4s ease, opacity 0.4s ease;
+        transition: all 0.4s ease;
         pointer-events: none;
 
 
         &.open {
             display: flex; // 메뉴 열기
-            transform: translateY(0);
-            opacity: 1;height: 100vh;
+            opacity: 1;height: 10rem;
             pointer-events: auto;
         }
 
@@ -181,9 +179,9 @@
                 }
 
                 .dep2 {
-                    top: 5rem;left: -52%;
+                    top: 6rem;left: -52%;
                     width: 25rem;
-                    background: none;
+                    background: white;
                     height: 1;
                     opacity: 0;
                     transition: all 0.3s;
@@ -207,8 +205,11 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
     #gnb {
+        &.open {
+            height: 100vh;
+        }
         .dep1 {
             flex-direction: column;
             align-items: start;justify-content: start;
@@ -220,25 +221,27 @@
                 text-align: left;
 
                 > a {
-                display: block;
-                padding: 3rem 2rem;
-                font-size: 2rem;
+                    display: block;
+                    padding: 3rem 2rem;
+                    font-size: 2rem;
                 }
 
                 .dep2 {
-                // position: relative;
-                top: 0; left: 30%;
-                background: none;
-                padding: 1rem 1.5rem;
-                max-height: none;
-                opacity: 1;
-                transition: all 0.3s;
-                transform: none;
-                display: none;
+                    // position: relative;
+                    top: -0.7rem; left: 12rem;
+                    background: none;
+                    padding: 0rem 1.5rem;
+                    max-height: none;
+                    opacity: 1;
+                    transition: all 0.3s;
+                    // transform: none;
+                    display: none;
+                    align-items: start;
+                    text-align: left;
                 }
 
                 &:hover .dep2 {
-                display: block;
+                    display: flex;
                 }
             }
         }
